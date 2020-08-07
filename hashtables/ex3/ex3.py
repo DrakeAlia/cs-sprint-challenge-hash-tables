@@ -4,6 +4,25 @@ def intersection(arrays):
     """
     # Your code here
 
+# Find the intersection between multiple lists of integers.
+# Do not use numpy or sets to solve this; use `dict` or hashtables, please
+
+    # Empty list
+    result = []
+    # Empty dict
+    cache = {}
+
+    # Subarray is a single list containing the integers within the list
+    for subarray in arrays:
+        for num in subarray:
+            if num not in cache:
+                # num = key, with 0 value
+                cache[num] = 1 
+            else:
+                # Append num to the intersection list
+                result.append(num)
+                # Creates a new list, removing any potential duplicates from the list
+    result = list(dict.fromkeys(result)) 
     return result
 
 
